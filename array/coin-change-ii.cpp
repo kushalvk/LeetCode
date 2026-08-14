@@ -6,11 +6,17 @@ public:
         dp[0] = 1;
 
         for (int coin : coins) {
+
             for (int i = coin; i <= amount; i++) {
-                dp[i] += dp[i - coin];
+
+                if (dp[i - coin] > INT_MAX - dp[i]) {
+                    dp[i] = INT_MAX;
+                } else {
+                    dp[i] += dp[i - coin];
+                }
             }
         }
 
-        return dp[amount];
+        return (int)dp[amount];
     }
 };
