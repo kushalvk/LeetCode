@@ -5,7 +5,7 @@ public:
         int r = s.size() - 1;
 
         while(l < r) {
-            swap(s[l], s[r])
+            swap(s[l], s[r]);
             l++;
             r--;
         }
