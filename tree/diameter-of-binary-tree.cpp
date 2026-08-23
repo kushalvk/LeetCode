@@ -30,7 +30,7 @@ public:
         int RightHeight = height(node->right);
 
         int currentDiameter = LestHeight + RightHeight;
-        diameter = max(LestHeight, currentDiameter);
+        diameter = max(diameter, currentDiameter);
 
         return 1 + max(LestHeight, RightHeight);
     }
